@@ -5,17 +5,17 @@ VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{87BDCAB6-B7AA-40FB-962C-F494089D1B7A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Examples.Api", "src\Examples.Api\Examples.Api.csproj", "{7AF3E6BE-F3D8-40AC-A1AB-A326F07E2153}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example.Api", "src\Example.Api\Example.Api.csproj", "{7AF3E6BE-F3D8-40AC-A1AB-A326F07E2153}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Examples.Core", "src\Examples.Core\Examples.Core.csproj", "{2D162F20-F261-4116-9D1A-A74291519740}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example.Core", "src\Example.Core\Example.Core.csproj", "{2D162F20-F261-4116-9D1A-A74291519740}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Examples.Core.Flagr", "src\Examples.Core.Flagr\Examples.Core.Flagr.csproj", "{4D68EEC5-DA69-4EB9-97A4-1AEC417B015F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example.Core.Flagr", "src\Example.Core.Flagr\Example.Core.Flagr.csproj", "{4D68EEC5-DA69-4EB9-97A4-1AEC417B015F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{C8AD1E83-DD82-477D-BD1A-D76A3AF09D0E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "component", "component", "{D7E3A338-6408-43BD-87BB-17F177FA2316}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Examples.Flagr.Tests", "tests\component\Examples.Flagr.Tests\Examples.Flagr.Tests.csproj", "{08F6FFE8-1527-4DF0-8B72-176BE206DF7C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example.Flagr.Tests", "tests\component\Example.Flagr.Tests\Example.Flagr.Tests.csproj", "{08F6FFE8-1527-4DF0-8B72-176BE206DF7C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
