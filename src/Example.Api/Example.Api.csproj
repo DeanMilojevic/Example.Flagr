@@ -5,4 +5,12 @@
   </PropertyGroup>
 
 
+  <ItemGroup>
+    <ProjectReference Include="..\Example.Core\Example.Core.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+    <ProjectReference Include="..\Example.Core.Flagr\Example.Core.Flagr.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+  </ItemGroup>
 </Project>

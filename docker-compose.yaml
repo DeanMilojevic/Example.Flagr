@@ -23,7 +23,7 @@ services:
       - ASPNETCORE_ENVIRONMENT=Test
       - ASPNETCORE_URLS=http://+:5000
     depends_on: 
-      - azurite
+      - flagr
     restart: on-failure
     networks: 
       - skynet

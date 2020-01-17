@@ -1,3 +1,4 @@
+using Example.Core.Flagr.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -17,6 +18,7 @@ namespace Examples.Api
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddFlaggerrClient();
             services.AddControllers();
         }
 
