@@ -1,0 +1,32 @@
+version: '3.7'
+
+services: 
+  flagr:
+    image: checkr/flagr
+    container_name: flagr
+    hostname: flagr
+    ports: 
+      - "18000:18000"
+    networks: 
+      - skynet
+  
+  api:
+    container_name: api
+    image: api
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    ports: 
+      - "5000:5000"
+      - "5001:5001"
+    environment: 
+      - ASPNETCORE_ENVIRONMENT=Test
+      - ASPNETCORE_URLS=http://+:5000
+    depends_on: 
+      - azurite
+    restart: on-failure
+    networks: 
+      - skynet
+
+networks: 
+  skynet:
