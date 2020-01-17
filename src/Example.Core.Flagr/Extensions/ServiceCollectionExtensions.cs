@@ -12,7 +12,7 @@ namespace Example.Core.Flagr.Extensions
             services.AddRefitClient<IFlagrClient>()
                     .ConfigureHttpClient(c =>
                     {
-                        c.BaseAddress = new Uri("http://flagr");
+                        c.BaseAddress = new Uri("http://flagr:18000");
                         c.DefaultRequestHeaders.Add("ContentType", "application/json");
                     });
 
