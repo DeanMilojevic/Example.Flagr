@@ -10,7 +10,11 @@ namespace Example.Core.Flagr.Extensions
         public static IServiceCollection AddFlaggerrClient(this IServiceCollection services)
         {
             services.AddRefitClient<IFlagrClient>()
-                    .ConfigureHttpClient(c => c.BaseAddress = new Uri("http://flagr"));
+                    .ConfigureHttpClient(c =>
+                    {
+                        c.BaseAddress = new Uri("http://flagr");
+                        c.DefaultRequestHeaders.Add("ContentType", "application/json");
+                    });
 
             services.AddTransient<IFlagger, Flagger>();
 
