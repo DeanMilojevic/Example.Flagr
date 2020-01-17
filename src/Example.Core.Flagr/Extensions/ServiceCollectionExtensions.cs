@@ -7,7 +7,7 @@ namespace Example.Core.Flagr.Extensions
 {
     public static class ServiceCollectionExtensions
     {
-        public static IServiceCollection AddFlaggerrClient(this IServiceCollection services)
+        public static IServiceCollection AddFlaggerClient(this IServiceCollection services)
         {
             services.AddRefitClient<IFlagrClient>()
                     .ConfigureHttpClient(c =>
