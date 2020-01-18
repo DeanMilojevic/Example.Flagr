@@ -1,4 +1,5 @@
 using Example.Core.Flagr.Extensions;
+using Example.Core.Flagr.Options;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -18,8 +19,11 @@ namespace Examples.Api
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddFlaggerrClient();
-            services.AddControllers();
+            FlagrOptions flagrOptions = new FlagrOptions();
+            Configuration.Bind("Flagr", flagrOptions);
+            services
+                .AddFlaggerClient(flagrOptions)
+                .AddControllers();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

@@ -8,6 +8,7 @@ namespace Example.Core.Flagr
     internal interface IFlagrClient
     {
         [Post("/api/v1/evaluation")]
-        Task<EvaluationResponse> EvaluationAsync([Body] EvaluationRequest data, CancellationToken cancellationToken);
+        [Headers("ContentType", "application/json")]
+        Task<EvaluationResponse> EvaluationAsync([Body] EvaluationRequest request, CancellationToken cancellationToken);
     }
 }

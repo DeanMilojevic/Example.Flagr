@@ -1,5 +1,6 @@
 using System;
 using Example.Core.Contracts;
+using Example.Core.Flagr.Options;
 using Microsoft.Extensions.DependencyInjection;
 using Refit;
 
@@ -7,13 +8,12 @@ namespace Example.Core.Flagr.Extensions
 {
     public static class ServiceCollectionExtensions
     {
-        public static IServiceCollection AddFlaggerClient(this IServiceCollection services)
+        public static IServiceCollection AddFlaggerClient(this IServiceCollection services, FlagrOptions options)
         {
             services.AddRefitClient<IFlagrClient>()
-                    .ConfigureHttpClient(c =>
+                    .ConfigureHttpClient(client =>
                     {
-                        c.BaseAddress = new Uri("http://flagr:18000");
-                        c.DefaultRequestHeaders.Add("ContentType", "application/json");
+                        client.BaseAddress = new Uri(options.Uri);
                     });
 
             services.AddTransient<IFlagger, Flagger>();
