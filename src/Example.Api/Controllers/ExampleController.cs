@@ -1,8 +1,8 @@
 using System.Threading;
 using System.Threading.Tasks;
 using Example.Core.Contracts;
+using Example.Core.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 
 namespace Examples.Controllers
 {
@@ -10,23 +10,19 @@ namespace Examples.Controllers
     [Route("api/example")]
     public class ExampleController : ControllerBase
     {
-        private readonly ILogger _logger;
         private readonly IFlagger _flagger;
 
-        public ExampleController(ILogger<ExampleController> logger, IFlagger flagger)
+        public ExampleController(IFlagger flagger)
         {
-            _logger = logger;
             _flagger = flagger;
         }
 
-        [HttpGet]
-        public async Task<IActionResult> PostAsync(CancellationToken cancellationToken)
+        [HttpGet("{key}/{id}")]
+        public async Task<ActionResult<Flag>> GetAsync(string key, string id, CancellationToken cancellationToken)
         {
-            var flag = await _flagger.GetAsync("test", "test", cancellationToken);
+            var flag = await _flagger.GetAsync(key, id, cancellationToken);
 
-            _logger.LogInformation($"{flag.Key}: {flag.Context}");
-
-            return Ok();
+            return new JsonResult(flag.EnitityId);
         }
     }
 }
