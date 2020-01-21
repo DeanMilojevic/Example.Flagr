@@ -7,14 +7,10 @@ namespace Example.Flagr.Tests
 {
     public class FlagrTests
     {
-        public FlagrTests()
-        {
-        }
-
         [Fact]
         public async Task Run()
         {
-            var client = new HttpClient
+            using var client = new HttpClient
             {
                 BaseAddress = new Uri("http://localhost:5000")
             };
